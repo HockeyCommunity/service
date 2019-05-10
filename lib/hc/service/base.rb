@@ -5,7 +5,7 @@ module HC
 
     # Used for abstraction and clarity of service objects
     #
-    class BaseService
+    class Base
 
       include ActiveModel::Validations
       include ActiveModel::Callbacks
