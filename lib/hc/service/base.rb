@@ -86,15 +86,13 @@ module HC
           begin
             service.execute
           rescue ActiveRecord::RecordInvalid => ex
-            Rails.logger.debug '================================='
-            Rails.logger.debug ex.inspect
-            Rails.logger.debug ex.backtrace.join("\n")
-            Rails.logger.debug '================================='
             if service.errors.blank?
               service.errors.add(:validation, ex.record.errors)
               service.manual_status_code = 422
             end
             raise ActiveRecord::Rollback
+          rescue ActiveRecord::Rollback => ex
+            raise ex
           rescue StandardError => ex
             Rails.logger.debug '================================='
             Rails.logger.debug ex.inspect
