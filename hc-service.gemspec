@@ -5,12 +5,12 @@ require "hc/service/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "hc-service"
-  spec.version       = "0.1.0"
+  spec.version       = "0.1.1"
   spec.authors       = ["Jack Hayter"]
   spec.email         = ["jack@hockey-community.com"]
 
-  spec.summary       = "A super simple object serializer"
-  spec.description   = "Transforms objects and collections into hashes for rendering as JSON"
+  spec.summary       = "Simple service objects"
+  spec.description   = "Provides powerful wrapper for service objects with error handling and transactions"
   spec.homepage      = "https://github.com/HockeyCommunity/service"
   spec.license       = "MIT"
 
