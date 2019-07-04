@@ -53,7 +53,7 @@ module HC
       end
 
       def present(object, method: nil, options: {})
-        HC::Presentation.present(object, method: method, options: options)
+        HC::Presenter.present(object, method: method, options: options)
       end
 
       def errors?
