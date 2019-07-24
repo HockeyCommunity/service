@@ -29,7 +29,7 @@ module HC
         return 0
       end
 
-      def raise_error!(field:, message:, code: 0)
+      def raise_error!(field, message, code = 0)
         errors.add(field, message)
         self.manual_status_code = code
         raise ActiveRecord::Rollback
