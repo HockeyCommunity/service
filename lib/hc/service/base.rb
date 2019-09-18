@@ -74,6 +74,7 @@ module HC
 
         # Service executions should be wrapped in a transaction, and gracefully handle errors
         #
+        exception = nil
         ActiveRecord::Base.transaction do
 
           # Validate service args
@@ -94,6 +95,7 @@ module HC
           rescue ActiveRecord::Rollback => ex
             raise ex
           rescue StandardError => ex
+            exception = ex
             Rails.logger.debug '================================='
             Rails.logger.debug ex.inspect
             Rails.logger.debug ex.backtrace.join("\n")
@@ -105,6 +107,8 @@ module HC
             raise ActiveRecord::Rollback
           end
         end
+
+        raise exception if exception
         return service
 
       end
