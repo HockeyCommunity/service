@@ -1,7 +1,7 @@
 require "hc/service/base"
 require "hc/service/version"
 
-module HC
+module Hc
   module Service
 
   end

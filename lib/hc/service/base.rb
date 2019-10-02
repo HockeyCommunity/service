@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HC
+module Hc
   module Service
 
     # Used for abstraction and clarity of service objects
@@ -53,7 +53,7 @@ module HC
       end
 
       def present(object, method: nil, options: {})
-        HC::Presenter.present(object, method: method, options: options)
+        Hc::Presenter.present(object, method: method, options: options)
       end
 
       def errors?
@@ -61,7 +61,7 @@ module HC
       end
 
       def enqueue_job(job_class:, params:, current_user:)
-        HC::Jobs.enqueue(job_class: job_class, user: current_user, params: params)
+        Hc::Jobs.enqueue(job_class: job_class, user: current_user, params: params)
       end
 
       # Abstracted execution instanciates class, sets variables, runs validations, and handles errors
