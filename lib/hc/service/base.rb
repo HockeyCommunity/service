@@ -7,6 +7,7 @@ module Hc
     #
     class Base
 
+      require 'active_model'
       include ActiveModel::Validations
       include ActiveModel::Callbacks
 

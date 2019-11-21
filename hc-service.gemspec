@@ -5,7 +5,7 @@ require "hc/service/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "hc-service"
-  spec.version       = "0.1.5"
+  spec.version       = "0.1.6"
   spec.authors       = ["Jack Hayter"]
   spec.email         = ["jack@hockey-community.com"]
 
@@ -22,4 +22,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler"
+  spec.add_runtime_dependency "activemodel"
+
 end
