@@ -27,7 +27,7 @@ module Hc
         return manual_status_code if manual_status_code
         return 422 if errors.present?
         return 200 if result
-        return 0
+        return 400
       end
 
       def raise_error!(field, message, code = 0)
